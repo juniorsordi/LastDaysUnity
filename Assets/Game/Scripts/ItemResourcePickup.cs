@@ -21,10 +21,10 @@ namespace VitalzeroGames {
 			if (itemType == ResourceManager.ResourceTypes.Food) 	{ msgAction = "addFood"; }
 			if (itemType == ResourceManager.ResourceTypes.Water) 	{ msgAction = "addWater"; }
 		}
-		
+
 		// Update is called once per frame
 		void Update () {
-			if (canPickup && Input.GetKeyDown (KeyCode.G)) {
+			if (canPickup && Input.GetKeyDown (KeyCode.E)) {
 				GameObject.Find ("GameManager").SendMessage (msgAction, amountResource);
 				Destroy (gameObject);
 			}

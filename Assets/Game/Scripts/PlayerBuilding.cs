@@ -17,12 +17,14 @@ namespace VitalzeroGames {
 		
 		// Update is called once per frame
 		void Update () {
-		
+			if(Input.GetKeyDown(KeyCode.F)) {
+				Build();
+			}
 		}
 
 		void Build() {
 			Vector3 pos = transform.position + transform.forward * someDistance;
-			pos.y = Terrain.activeTerrain.SampleHeight(pos);
+			pos.y = Terrain.activeTerrain.SampleHeight(pos)+0.5f;
 			prefab.transform.position = pos + Vector3.up * 1;
 			prefab.transform.rotation = Quaternion.LookRotation(transform.forward);
 			GameObject obj = (GameObject) Instantiate(prefab, pos, player.transform.rotation);

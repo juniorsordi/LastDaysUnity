@@ -48,14 +48,15 @@ namespace VitalzeroGames {
 		// Update is called once per frame
 		void Update () {
 			if (!isPaused) {
+				/*
 				if (Input.GetButtonDown ("Fire1")) {
 					if (Time.time > (m_LastFireTime + 2.0f)) {
 						if (CurrentWeaponClipCount > 0) {
-							Shoot ();
+							//Shoot ();
 						}
 					}
 				}
-
+				//*/
 				if (Input.GetKeyDown (KeyCode.R)) {
 					Reload ();
 				}
