@@ -5,6 +5,8 @@ namespace VitalzeroGames {
 
 	public class PlayerManager : MonoBehaviour {
 
+		public enum WeaponType { Melee, Pistol, SMG, Shotgun, Rifle, Sniper, RPG };
+
 		public string playerName	= "Player1";
 		public int playerHealth		= 100;
 		public int playerLevel		= 1;
@@ -15,7 +17,7 @@ namespace VitalzeroGames {
 
 		public bool isDead = false;
 		public bool isPaused = false;
-		public vp_Weapon.Type currentWeaponType;
+		public WeaponType currentWeaponType;
 
 		public Texture CurrentAmmoIcon;
 		public int CurrentWeaponAmmoCount = 100;
@@ -115,7 +117,7 @@ namespace VitalzeroGames {
 		public void SetSpread(int seed, Transform target)
 		{
 
-			vp_MathUtility.SetSeed(seed);
+			//vp_MathUtility.SetSeed(seed);
 
 			//vp_MasterClient.DebugMsg = "Firing shot from '" + photonView.viewID + "' with seed: " + Random.seed + ".";
 			target.Rotate(0, 0, Random.Range(0, 360));									// first, rotate up to 360 degrees around z for circular spread
